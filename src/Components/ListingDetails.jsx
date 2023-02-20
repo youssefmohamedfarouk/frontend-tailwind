@@ -95,9 +95,8 @@ export default function DetailsPage() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setNewBid({ ...newBid, listing_id: currentMotorcycle.id });
     axios
-      .post(`${API}/bids`, newBid)
+      .post(`${API}/bids`, { ...newBid, listing_id: currentMotorcycle.id })
       .then((bid) => {
         setCurrentBids([...currentBids, bid.data]);
       })
