@@ -1,17 +1,3 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
 import { Fragment, useState } from "react";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import {
@@ -147,9 +133,7 @@ export default function DetailsPage() {
           </Dialog>
         </Transition.Root>
 
-        {/* Static sidebar for desktop */}
         <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
-          {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex flex-grow flex-col overflow-y-auto bg-pink-600 pt-5">
             <div className="flex flex-shrink-0 items-center px-4">
               <img
@@ -203,7 +187,7 @@ export default function DetailsPage() {
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
 
-                {/* Profile dropdown */}
+                {/* USER */}
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
@@ -250,11 +234,11 @@ export default function DetailsPage() {
           <main>
             <div className="py-6">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                {/* Main Content */}
+                {/* LISTING DETAILS */}
                 <div className="py-4">
                   <ListingDetails />
                 </div>
-                {/* Main Content */}
+                {/* LISTING DETAILS */}
               </div>
             </div>
           </main>

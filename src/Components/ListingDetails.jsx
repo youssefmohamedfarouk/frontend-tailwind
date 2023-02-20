@@ -64,7 +64,6 @@ export default function DetailsPage() {
       .get(`${API}/motorcycles`)
       .then((res) => {
         setMotorcycles(res.data);
-        // console.log(motorcycles);
       })
       .catch((error) => console.error);
   }, [API]);
@@ -74,7 +73,6 @@ export default function DetailsPage() {
       .get(`${API}/motorcycles/1`)
       .then((res) => {
         setCurrentMotorcycle(res.data);
-        // console.log(motorcycles);
       })
       .catch((error) => console.error);
   }, [API]);
@@ -84,7 +82,6 @@ export default function DetailsPage() {
       .get(`${API}/bids/1`)
       .then((res) => {
         setCurrentBids(res.data);
-        // console.log(motorcycles);
       })
       .catch((error) => console.error);
   }, [API]);
@@ -112,7 +109,6 @@ export default function DetailsPage() {
       .get(`${API}/motorcycles/${event.target.id}`)
       .then((res) => {
         setCurrentMotorcycle(res.data);
-        console.log(currentMotorcycle);
       })
       .catch((error) => console.error);
   };
@@ -123,7 +119,6 @@ export default function DetailsPage() {
       .get(`${API}/bids/${event.target.id}`)
       .then((res) => {
         setCurrentBids(res.data);
-        console.log(currentBids);
       })
       .catch((error) => console.error);
   };
