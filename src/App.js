@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./Components/Home";
+import Listings from "./Components/Listings";
+// import Index from "./Components/Motorcycles";
+// import MotorcycleDetails from "./Components/MotorcycleDetails";
+import ListingForm from "./Components/ListingForm";
+import DetailsPage from "./Components/DetailsPage";
+// import NavBar2 from "./Components/NavBar2";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/motorcycles" element={<Listings />} />
+            <Route path="/motorcycles/:id" element={<DetailsPage />} />
+            <Route path="/motorcycles/:id/edit" element={<ListingForm />} />
+            <Route path="/motorcycles/new" element={<ListingForm />} />
+          </Routes>
+        </main>
+      </Router>
     </div>
   );
 }
