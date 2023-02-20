@@ -98,9 +98,11 @@ export default function DetailsPage() {
     setNewBid({ ...newBid, listing_id: currentMotorcycle.id });
     axios
       .post(`${API}/bids`, newBid)
+      .then((bid) => {
+        setCurrentBids([...currentBids, bid.data]);
+      })
       .then(() => {
         setBidOpen(false);
-        window.location.reload();
       })
       .catch((error) => console.error("catch", error));
   };
@@ -132,15 +134,17 @@ export default function DetailsPage() {
     getBids(event);
   };
 
-  const handleDelete = (id, path) => {
+  const handleDelete = (path, id) => {
+    // console.log(path + id);
     axios
       .delete(`${API}/${path}/${id}`)
-      .then(
-        () => {
-          window.location.reload();
-        },
-        (error) => console.error(error)
-      )
+      .then(() => {
+        if (path === "motorcycles") {
+          setMotorcycles(motorcycles.filter((motor) => motor.id !== id));
+        } else {
+          setCurrentBids(currentBids.filter((bid) => bid.id !== id));
+        }
+      })
       .catch((c) => console.warn("catch", c));
   };
 
@@ -532,7 +536,9 @@ export default function DetailsPage() {
                         <button
                           type="button"
                           className="ml-6 rounded-md bg-white text-sm font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                          onClick={() => handleDelete(bid.id, "bids")}
+                          onClick={() => {
+                            handleDelete("bids", bid.id);
+                          }}
                         >
                           Remove<span className="sr-only"> {bid.bidder}</span>
                         </button>
@@ -751,11 +757,10 @@ export default function DetailsPage() {
                                   className="inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
                                   onClick={() => {
                                     handleDelete(
-                                      currentMotorcycle.id,
-                                      "motorcycles"
+                                      "motorcycles",
+                                      currentMotorcycle.id
                                     );
                                     setOpen(false);
-                                    window.location.reload();
                                   }}
                                 >
                                   Delete
