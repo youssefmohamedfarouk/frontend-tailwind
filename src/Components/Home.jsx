@@ -30,7 +30,7 @@ export default function Home() {
               className="flex items-center justify-between sm:h-10 lg:justify-start"
               aria-label="Global"
             >
-              <a href="#" className="-m-1.5 p-1.5">
+              <a href="/" className="-m-1.5 p-1.5">
                 <span className="sr-only">Squid Pro Quo</span>
                 <img
                   alt="Squid Pro Quo"
@@ -69,7 +69,7 @@ export default function Home() {
                     <span className="sr-only">Close menu</span>
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
-                  <a href="#" className="-m-1.5 p-1.5">
+                  <a href="/" className="-m-1.5 p-1.5">
                     <span className="sr-only">Squid Pro Quo</span>
                     <img
                       className="h-8"
@@ -99,7 +99,10 @@ export default function Home() {
                 <div className="relative rounded-full py-1 px-3 text-sm leading-6 text-white ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                   Want to list your bike or in the market for something new? Get
                   started today!{" "}
-                  <a href="#" className="whitespace-nowrap font-semibold">
+                  <a
+                    href="/motorcycles"
+                    className="whitespace-nowrap font-semibold"
+                  >
                     <span className="absolute inset-0 " aria-hidden="true" />
                     Read more <span aria-hidden="true">&rarr;</span>
                   </a>
@@ -119,7 +122,7 @@ export default function Home() {
                   Get started
                 </a>
                 <a
-                  href="#"
+                  href="/motorcycles"
                   className="text-base font-semibold leading-7 text-white"
                 >
                   Learn more <span aria-hidden="true">→</span>

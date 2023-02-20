@@ -1,15 +1,12 @@
 import { Fragment, useState, useEffect, useRef } from "react";
 import axios from "axios";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Dialog, Menu, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import {
   Bars3BottomLeftIcon,
   HeartIcon,
-  HomeIcon,
-  PhotoIcon,
   PlusIcon as PlusIconOutline,
-  Squares2X2Icon as Squares2X2IconOutline,
 } from "@heroicons/react/24/outline";
 import {
   Bars4Icon,
@@ -19,10 +16,10 @@ import {
   Squares2X2Icon as Squares2X2IconMini,
 } from "@heroicons/react/20/solid";
 
-const navigation = [
-  { name: "Home", href: "/", icon: HomeIcon, current: false },
-  { name: "Listings", href: "/motorcycles", icon: PhotoIcon, current: true },
-];
+// const navigation = [
+//   { name: "Home", href: "/", icon: HomeIcon, current: false },
+//   { name: "Listings", href: "/motorcycles", icon: PhotoIcon, current: true },
+// ];
 const userNavigation = [
   { name: "Your profile", href: "#" },
   { name: "Sign out", href: "#" },
@@ -38,7 +35,7 @@ function classNames(...classes) {
 }
 
 export default function DetailsPage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  //   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const API = process.env.REACT_APP_API_URL;
   const [motorcycles, setMotorcycles] = useState([]);
   const [currentMotorcycle, setCurrentMotorcycle] = useState({});
@@ -54,7 +51,6 @@ export default function DetailsPage() {
     listing_id: 0,
   });
 
-  const { id } = useParams();
   let navigate = useNavigate();
 
   const priceFormat = (price) =>
@@ -71,7 +67,7 @@ export default function DetailsPage() {
         // console.log(motorcycles);
       })
       .catch((error) => console.error);
-  }, []);
+  }, [API]);
 
   useEffect(() => {
     axios
@@ -81,7 +77,7 @@ export default function DetailsPage() {
         // console.log(motorcycles);
       })
       .catch((error) => console.error);
-  }, []);
+  }, [API]);
 
   useEffect(() => {
     axios
@@ -91,7 +87,7 @@ export default function DetailsPage() {
         // console.log(motorcycles);
       })
       .catch((error) => console.error);
-  }, []);
+  }, [API]);
 
   const handleTextChange = (event) => {
     setNewBid({ ...newBid, [event.target.id]: event.target.value });
@@ -157,7 +153,7 @@ export default function DetailsPage() {
               <button
                 type="button"
                 className="border-r border-gray-200 px-4 text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 md:hidden"
-                onClick={() => setMobileMenuOpen(true)}
+                // onClick={() => setMobileMenuOpen(true)}
               >
                 <span className="sr-only">Open sidebar</span>
                 <Bars3BottomLeftIcon className="h-6 w-6" aria-hidden="true" />
@@ -349,10 +345,7 @@ export default function DetailsPage() {
                   <h2 id="gallery-heading" className="sr-only">
                     All Listings
                   </h2>
-                  <ul
-                    role="list"
-                    className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8"
-                  >
+                  <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 md:grid-cols-4 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
                     {motorcycles.map((motorcycle) => (
                       <li
                         key={motorcycle.id + motorcycle.make + motorcycle.model}
@@ -506,10 +499,7 @@ export default function DetailsPage() {
 
                 <div>
                   <h3 className="font-medium text-gray-900">Current Bids</h3>
-                  <ul
-                    role="list"
-                    className="mt-2 divide-y divide-gray-200 border-t border-b border-gray-200"
-                  >
+                  <ul className="mt-2 divide-y divide-gray-200 border-t border-b border-gray-200">
                     {currentBids.map((bid) => (
                       <li
                         key={bid.bidder + bid.id}

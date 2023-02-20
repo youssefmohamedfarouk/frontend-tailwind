@@ -162,17 +162,10 @@ const usStates = {
 //   { WY: "WY - Wyoming" },
 // ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function Form() {
   const API = process.env.REACT_APP_API_URL;
   let { id } = useParams();
   let navigate = useNavigate();
-
-  const [selected, setSelected] = useState(motorcycleMakes[0]);
-  const [selectedSt, setSelectedSt] = useState(usStates[0]);
 
   const [motorcycle, setMotorcycle] = useState({
     img: "https://i.ytimg.com/vi/GlhkzHT0iJE/hqdefault.jpg",

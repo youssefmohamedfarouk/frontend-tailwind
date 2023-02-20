@@ -23,7 +23,6 @@ import {
   HomeIcon,
   XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid";
 import ListingDetails from "./ListingDetails";
 
 const navigation = [
@@ -114,7 +113,7 @@ export default function DetailsPage() {
                     <img
                       className="h-8 w-auto"
                       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
-                      alt="Your Company"
+                      alt="Squid Pro Quo"
                     />
                   </div>
                   <div className="mt-5 h-0 flex-1 overflow-y-auto">
@@ -156,7 +155,7 @@ export default function DetailsPage() {
               <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
-                alt="Your Company"
+                alt="Squid Pro Quo"
               />
             </div>
             <div className="mt-5 flex flex-1 flex-col">
