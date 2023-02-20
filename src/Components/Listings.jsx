@@ -98,7 +98,7 @@ export default function Example() {
                     <img
                       className="h-8 w-auto"
                       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
-                      alt="Your Company"
+                      alt="Squid Pro Quo"
                     />
                   </div>
                   <div className="mt-5 h-0 flex-1 overflow-y-auto">
@@ -140,7 +140,7 @@ export default function Example() {
               <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
-                alt="Your Company"
+                alt="Squid Pro Quo"
               />
             </div>
             <div className="mt-5 flex flex-1 flex-col">
@@ -171,11 +171,10 @@ export default function Example() {
           <main>
             <div className="py-6">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                {/* Main Content */}
+                {/* LISTING DETAILS */}
                 <div className="py-4">
                   <ListingDetails />
                 </div>
-                {/* End of Main Content */}
               </div>
             </div>
           </main>

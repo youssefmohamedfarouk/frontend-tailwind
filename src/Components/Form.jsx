@@ -1,13 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import {
-  CreditCardIcon,
-  KeyIcon,
-  SquaresPlusIcon,
-  UserCircleIcon,
-  UserGroupIcon,
-} from "@heroicons/react/24/outline";
 
 const motorcycleMakes = [
   "BMW",

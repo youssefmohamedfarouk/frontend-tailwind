@@ -31,9 +31,9 @@ export default function Home() {
               aria-label="Global"
             >
               <a href="#" className="-m-1.5 p-1.5">
-                <span className="sr-only">Your Company</span>
+                <span className="sr-only">Squid Pro Quo</span>
                 <img
-                  alt="Your Company"
+                  alt="Squid Pro Quo"
                   className="h-8 w-auto"
                   src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                 />
@@ -70,7 +70,7 @@ export default function Home() {
                     <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
                   <a href="#" className="-m-1.5 p-1.5">
-                    <span className="sr-only">Your Company</span>
+                    <span className="sr-only">Squid Pro Quo</span>
                     <img
                       className="h-8"
                       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"

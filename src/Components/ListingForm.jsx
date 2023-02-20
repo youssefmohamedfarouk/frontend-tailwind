@@ -99,7 +99,7 @@ export default function ListingForm() {
                     <img
                       className="h-8 w-auto"
                       src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
-                      alt="Your Company"
+                      alt="Squid Pro Quo"
                     />
                   </div>
                   <div className="mt-5 h-0 flex-1 overflow-y-auto">
@@ -126,22 +126,19 @@ export default function ListingForm() {
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
-              <div className="w-14 flex-shrink-0" aria-hidden="true">
-                {/* Dummy element to force sidebar to shrink to fit close icon */}
-              </div>
+              <div className="w-14 flex-shrink-0" aria-hidden="true"></div>
             </div>
           </Dialog>
         </Transition.Root>
 
-        {/* Static sidebar for desktop */}
+        {/* Side navbar */}
         <div className="hidden md:fixed md:inset-y-0 md:flex md:w-64 md:flex-col">
-          {/* Sidebar component, swap this element with another sidebar if you like */}
           <div className="flex flex-grow flex-col overflow-y-auto bg-red-600 pt-5">
             <div className="flex flex-shrink-0 items-center px-4">
               <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
-                alt="Your Company"
+                alt="Squid Pro Quo"
               />
             </div>
             <div className="mt-5 flex flex-1 flex-col">
@@ -189,7 +186,7 @@ export default function ListingForm() {
                   <BellIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
 
-                {/* Profile dropdown */}
+                {/* USER */}
                 <Menu as="div" className="relative ml-3">
                   <div>
                     <Menu.Button className="flex max-w-xs items-center rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
@@ -236,11 +233,10 @@ export default function ListingForm() {
           <main>
             <div className="py-6">
               <div className="mx-auto max-w-7xl px-4 sm:px-6 md:px-8">
-                {/* Replace with your content */}
+                {/* LISTING FORM */}
                 <div className="py-4">
                   <Form />
                 </div>
-                {/* /End replace */}
               </div>
             </div>
           </main>

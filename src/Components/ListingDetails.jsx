@@ -5,14 +5,11 @@ import { Dialog, Menu, Transition } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 import {
   Bars3BottomLeftIcon,
-  CogIcon,
   HeartIcon,
   HomeIcon,
   PhotoIcon,
   PlusIcon as PlusIconOutline,
-  RectangleStackIcon,
   Squares2X2Icon as Squares2X2IconOutline,
-  UserGroupIcon,
 } from "@heroicons/react/24/outline";
 import {
   Bars4Icon,
@@ -23,15 +20,15 @@ import {
 } from "@heroicons/react/20/solid";
 
 const navigation = [
-  { name: "Home", href: "#", icon: HomeIcon, current: false },
-  { name: "Listings", href: "#", icon: PhotoIcon, current: true },
+  { name: "Home", href: "/", icon: HomeIcon, current: false },
+  { name: "Listings", href: "/motorcycles", icon: PhotoIcon, current: true },
 ];
 const userNavigation = [
   { name: "Your profile", href: "#" },
   { name: "Sign out", href: "#" },
 ];
 const tabs = [
-  { name: "All Listings", href: "#", current: true },
+  { name: "All Listings", href: "/motorcycles", current: true },
   { name: "Recently Added", href: "#", current: false },
   { name: "Favorited", href: "#", current: false },
 ];
@@ -154,7 +151,6 @@ export default function DetailsPage() {
   return (
     <>
       <div className="flex h-full">
-        {/* Content area */}
         <div className="flex flex-1 flex-col overflow-hidden">
           <header className="w-full">
             <div className="relative z-10 flex h-16 flex-shrink-0 border-b border-gray-200 bg-white shadow-sm">
@@ -200,7 +196,7 @@ export default function DetailsPage() {
                   </form>
                 </div>
                 <div className="ml-2 flex items-center space-x-4 sm:ml-6 sm:space-x-6">
-                  {/* Profile dropdown */}
+                  {/* USER */}
                   <Menu as="div" className="relative flex-shrink-0">
                     <div>
                       <Menu.Button className="flex rounded-full bg-white text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
@@ -253,7 +249,7 @@ export default function DetailsPage() {
             </div>
           </header>
 
-          {/* Main content */}
+          {/* LISTINGS */}
           <div className="flex flex-1 items-stretch overflow-hidden">
             <main className="flex-1 overflow-y-auto">
               <div className="mx-auto max-w-7xl px-4 pt-8 sm:px-6 lg:px-8">
@@ -282,13 +278,13 @@ export default function DetailsPage() {
                   </div>
                 </div>
 
-                {/* Tabs */}
+                {/* TABS */}
                 <div className="mt-3 sm:mt-2">
                   <div className="sm:hidden">
                     <label htmlFor="tabs" className="sr-only">
                       Select a tab
                     </label>
-                    {/* Use an "onChange" listener to redirect the user to the selected tab URL. */}
+
                     <select
                       id="tabs"
                       name="tabs"
